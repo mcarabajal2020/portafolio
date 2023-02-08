@@ -1,0 +1,46 @@
+:root {
+    --main-gb-color: #2c3d50;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.bg-dark {
+    background-color: var(--main-gb-color) !important;
+}
+
+hr {
+    width: 100px;
+    border: 5px solid black;
+    margin: auto;
+}
+
+h2,
+p {
+    color: white;
+}
+
+input.form-control,
+text.form-control {
+    border: none !important;
+    border-radius: none !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.btn-primary {
+    border-color: #5cbdbc !important;
+    background-color: #5cbd9d !important;
+}
+
+footer {
+    background-color: var(--main-gb-color);
+}
+
+footer h3 {
+    color: white;
+}
+
+footer a {
+    color: white;
+}
