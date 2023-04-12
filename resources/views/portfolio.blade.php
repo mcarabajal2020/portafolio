@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Carabajal dev</title>
 
         <!-- Fonts -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{asset('css/style.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Styles -->
         <style>
@@ -21,26 +22,30 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+            @vite(['resources/sass/app.scss', 'resources/sass/style.sass', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
            <div class="container">
                 <div class="row py-4">
                     <div class="container d-flex justify-content-between">
-                        <a class="navbar-brand mr-auto" href="#">Portfolio Carabajal</a>
+                        <a class="navbar-brand mr-auto" href="/portfolio">CarabajalDev</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarText">
                               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                   <li class="nav-item">
-                                      <a class="nav-link active" aria-current="page" href="#portfolio">Portfolio</a>
+                                      <a class="nav-link active" aria-current="page" href="/portfolio">Portfolio</a>
                                   </li>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="#acercade">About</a>
+                                      <a class="nav-link" href="/portfolio#acercade">Acerca de</a>
                                   </li>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="#contacto">Contacto</a>
+                                      <a class="nav-link" href="{{route('posts')}}">Blog</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="{{route('contact.form')}}">Contacto</a>
                                   </li>
                               </ul>
                         </div>
@@ -55,33 +60,28 @@
                     <h1>Bienvenidos</h1>
                     <hr>
                     <p>Desarrollador web</p>
+                  
                 </div>
                
             </div>
           </header>
             <section class="container-fluid" id="portfolio">
-                    <div class="row justify-content-center mb-5">
+                    <div class="row justify-content-center mb-5" >
                         <div class="col-12 text-center mt-5">
-                            <h2>PORTFOLIO</h2>
-                            <hr >
+                            <h2 class="text-dark">PORTFOLIO</h2>
+                            <hr>
                         </div>
                         <div class="col-4 text-center mt-5">
-                            <img src="{{asset('images/cuadrito-bonito.png')}}" alt="Cuadrito Bonito">
+                            <h1>Coop. Electrica de Pasteur</h1>
+                           <a href="http://www.intercoopasteur.com.ar"> <img src="{{asset('https://intercoopasteur.com.ar/wp-content/uploads/2020/06/logo-de-la-Cooperativa-1024x960.png')}}" alt="Cooperativa Electrica de Pasteur" width="150"></a> 
                         </div>
                         <div class="col-4 text-center mt-5">
-                            <img src="{{asset('images/cuadrito-bonito.png')}}" alt="Cuadrito Bonito">
+                            <h1>Coop. De Agua Henderson</h1>
+                            <a href="http://www.coophenderson.com.ar"> <img src="{{asset('https://coophenderson.com.ar/wp-content/uploads/2021/11/Logo-Cooperativa-150x150.png')}}" alt="Cooperativa de Agua Potable y otros Servicios Publicos de Henderson LTDA" width="150"></a>
                         </div>
                         <div class="col-4 text-center mt-5">
-                            <img src="{{asset('images/cuadrito-bonito.png')}}" alt="Cuadrito Bonito">
-                        </div>
-                        <div class="col-4 text-center mt-5">
-                            <img src="{{asset('images/cuadrito-bonito.png')}}" alt="Cuadrito Bonito">
-                        </div>
-                        <div class="col-4 text-center mt-5">
-                            <img src="{{asset('images/cuadrito-bonito.png')}}" alt="Cuadrito Bonito">
-                        </div>
-                        <div class="col-4 text-center mt-5">
-                            <img src="{{asset('images/cuadrito-bonito.png')}}" alt="Cuadrito Bonito">
+                            <h1>El Inca - Consagro</h1>
+                            <a href="https://consultoragropecuario.com.ar"><img src="{{asset('https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png')}}" alt="El Inca - Consagro" width="150"></a>
                         </div>
                     </div>
             </section>
@@ -89,45 +89,20 @@
             <section class="container-fluid" id="acercade" >
                 <div class="row justify-content-center py-5" style="background-color: #5cbd9d">
                     <div class="col-12 text-center mt-5 mb-4">
-                        <h2 style="text-color: white; ">ABOUT ME</h2>
+                        <h2 style="text-color: white; ">Acerca de mi</h2>
                         <hr >
                     </div>
                     <div class="col-4">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quidem labore voluptatum quas aliquid, omnis temporibus voluptates adipisci ab. Expedita a sequi nobis molestiae tenetur sed ad temporibus aspernatur fuga.</p>
+                        <p>Me apasiona la tecnología, pero no me conformo con solo usarla, necesito entenderla y ver otras maneras de aplicarla o mejorarla, creo que por eso desarmaba los juguetes de niño, para entender cómo funcionaban.  Desde muy joven supe que de una o otra manera mi trabajo tenía que estar ligado a la tecnología, en mis inicios reparando computadoras, desarrollando infraestructura, y ahora programando aplicaciones web.</p>
                     </div>
                     <div class="col-4">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quidem labore voluptatum quas aliquid, omnis temporibus voluptates adipisci ab. Expedita a sequi nobis molestiae tenetur sed ad temporibus aspernatur fuga.</p>
-                    </div>  
-                    <div class="col-12 text-center" >
-                        <button type="button" class="btn btn-outline-secondary">Free Download!</button>
-                    </div>
+                        <p>Soy emprendedor y encaro los proyectos con mucha pasión, a veces sin medir el tiempo que invierto, como dicen por ahí, de los que se tiran todo al hombro, pero también soy precavido y analizó todas las variables posibles antes de tomar una decisión. Estas cualidades son las que me llevaron a donde estoy.</p>    
+                   </div>  
+                   
                 </div>
                
             </section>
-            <section class="container-fluid" id="contacto">
-                <div class="row justify-content-center mb-5">
-                    <div class="col-12 text-center mt-5">
-                        <h2>Contacto</h2>
-                        <hr >
-                    </div>
-                    <div class="col-8">
-                        <form>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
-                            </div>
-                            <div class="mb-3">
-                              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                            <div class="mb-3">
-                              <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefono">
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" id="msg" rows="3" placeholder="Mensaje"></textarea>
-                              </div>
-                            <button type="submit" class="btn btn-primary p-3">Enviar</button>
-                        </form>
-                    </div>
-                </div>
-        </section>
+            
         <footer class="container-fluid">
             <div class="row justify-content-center py-3">
                 <div class="col-4 text-center">
@@ -136,9 +111,11 @@
                 </div> 
                 <div class="col-4 text-center">
                     <h3>SIGUEME</h3>
-                    <a href="Facebook">Facebook</a>
-                    <a href="Twitter">Twitter</a>
-                    <a href="Instagram">Instagram</a>
+                    
+                        <a href="https://www.facebook.com/alejandromaximiliano.carabajal"><i class="fa-brands fa-facebook zoom"></i></a>
+                        <a href="https://twitter.com/Maxi_carabajal"><i class="fa-brands fa-twitter zoom"></i></a>
+                        <a href="https://www.instagram.com/alejandromaximilianocarabajal/"><i class="fa-brands fa-instagram zoom"></i></a>
+                  
                 </div> 
                 <div class="col-4 text-center">
                     <h3>ACERCA DE</h3>
@@ -149,5 +126,6 @@
                 </div>
             </div>
         </footer>
+        
     </body>
 </html>

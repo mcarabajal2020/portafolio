@@ -44,3 +44,11 @@ footer h3 {
 footer a {
     color: white;
 }
+
+.zoom {
+    transition: transform .3s;
+}
+
+.zoom:hover {
+    transform: scale(1.8);
+}
