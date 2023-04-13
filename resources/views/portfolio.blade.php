@@ -73,15 +73,15 @@
                         </div>
                         <div class="col-4 text-center mt-5">
                             <h1>Coop. Electrica de Pasteur</h1>
-                           <a href="http://www.intercoopasteur.com.ar"> <img src="{{asset('https://intercoopasteur.com.ar/wp-content/uploads/2020/06/logo-de-la-Cooperativa-1024x960.png')}}" alt="Cooperativa Electrica de Pasteur" width="150"></a> 
+                           <a href="http://www.intercoopasteur.com.ar"> <img src="{{asset('https://intercoopasteur.com.ar/wp-content/uploads/2020/06/logo-de-la-Cooperativa-1024x960.png')}}" alt="Cooperativa Electrica de Pasteur" width="100"></a> 
                         </div>
                         <div class="col-4 text-center mt-5">
                             <h1>Coop. De Agua Henderson</h1>
-                            <a href="http://www.coophenderson.com.ar"> <img src="{{asset('https://coophenderson.com.ar/wp-content/uploads/2021/11/Logo-Cooperativa-150x150.png')}}" alt="Cooperativa de Agua Potable y otros Servicios Publicos de Henderson LTDA" width="150"></a>
+                            <a href="http://www.coophenderson.com.ar"> <img src="{{asset('https://coophenderson.com.ar/wp-content/uploads/2021/11/Logo-Cooperativa-150x150.png')}}" alt="Cooperativa de Agua Potable y otros Servicios Publicos de Henderson LTDA" width="100"></a>
                         </div>
                         <div class="col-4 text-center mt-5">
                             <h1>El Inca - Consagro</h1>
-                            <a href="https://consultoragropecuario.com.ar"><img src="{{asset('https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png')}}" alt="El Inca - Consagro" width="150"></a>
+                            <a href="https://consultoragropecuario.com.ar"><img src="{{asset('https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png')}}" alt="El Inca - Consagro" width="100"></a>
                         </div>
                     </div>
             </section>
