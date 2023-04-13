@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', '{{$post->title}}')
+@section('title', "{{$post->title}}")
     
 @section('content')
     
