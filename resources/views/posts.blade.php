@@ -31,7 +31,7 @@
                                 <small class="card-txt-category">Categoría: {{$category->name}}</small>
                                 <h5 class="card-title my-2">{{$post->title}}</h5>
                                 <div class="d-card-text">
-                                    {{Str::limit($post->content, 70)}} 
+                                    {!! Str::limit($post->content, 70) !!} 
                                 </div>
                                 <a href="{{route('post', $post->id)}}" class="post-link"><b>Leer Mas</b></a>
                                 <hr>

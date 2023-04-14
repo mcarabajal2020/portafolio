@@ -15,8 +15,8 @@
                 <span>{{$post->author}}</span>
                 <span class="float-right">Publicado:{{\Carbon\Carbon::parse($post['created_at'])->diffForHumans() }}</span>
             </p>
-            <p class="text-left text-dark">
-               {{$post->content}}
+            <p class="prose lg:prose-xl text-left text-dark">
+               {!! $post->content !!}
             </p>
             <p class="text-left post-txt"><i>Categoría: {{$post->category->name}}</i></p>
         </div>
@@ -128,3 +128,6 @@
     </div>
 </section> --}}
 @endsection
+@section('js')
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<script>

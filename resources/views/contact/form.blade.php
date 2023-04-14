@@ -5,7 +5,7 @@
   
 @section('content')
 
-    <div class="d-flex justify-content-center align-items-center vh-75" >
+    <div class="d-flex justify-content-center align-items-center vh-100" >
         <div>
         <form action="{{ route('contact.send') }}" method="POST">
         @csrf

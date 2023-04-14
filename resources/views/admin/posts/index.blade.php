@@ -97,7 +97,7 @@
                    </div>
                    <div class="form-group">
                     <label for="content">Contenido</label>
-                    <textarea name="content" id="content" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea id="editor" name="content" id="content" class="form-control" cols="30" rows="10"></textarea>
                     
                     </div>
                     <div class="form-group">
@@ -125,11 +125,18 @@
 @stop
 
 @section('js')
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
 <script>
 $(document).ready(function() {
     $('#posts').DataTable( {
         "order": [[ 3, "desc" ]]
     } );
 } );
+
+ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
 </script>
 @stop
