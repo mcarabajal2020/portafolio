@@ -16,9 +16,12 @@ hr {
     margin: auto;
 }
 
-h2,
+h2 {
+    color: black;
+}
+
 p {
-    color: white;
+    color: black;
 }
 
 input.form-control,
@@ -37,11 +40,19 @@ footer {
     background-color: var(--main-gb-color);
 }
 
+footer h2 {
+    color: white;
+}
+
 footer h3 {
     color: white;
 }
 
 footer a {
+    color: white;
+}
+
+footer p {
     color: white;
 }
 
