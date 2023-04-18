@@ -24,7 +24,7 @@
                    </div>
                    <div class="form-group">
                     <label for="content">Contenido</label>
-                    <textarea id="editor" name="content" id="content" class="form-control" cols="30" rows="10" >{{$post->content}}</textarea>
+                    <textarea id="editor2" name="content" id="content" class="ckeditor form-control" cols="30" rows="10" >{{$post->content}}</textarea>
                     
                     </div>
                     <div class="form-group">
@@ -46,15 +46,3 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-
-@section('js')
-<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
-<script>
-
-ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-</script>
-@stop

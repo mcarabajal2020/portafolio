@@ -125,18 +125,27 @@
 @stop
 
 @section('js')
-<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/classic/ckeditor.js"></script>
 <script>
+  
 $(document).ready(function() {
     $('#posts').DataTable( {
         "order": [[ 3, "desc" ]]
     } );
 } );
 
-ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+
 </script>
+<script>  ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .catch( error => {
+        console.error();
+    } );            </script>
+    <script>  ClassicEditor
+        .create( document.querySelector( '#editor2' ) )
+        .catch( error => {
+            console.error();
+        } );            </script>
+
+
 @stop
