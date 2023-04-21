@@ -25,6 +25,6 @@ $data = $request->validate([
 
 Mail::to('alejandrom.carabajal@gmail.com')->send(new ContactForm($data));
 
-return back()->with('data', $data)->with('message', ['success', 'Message sent succesfully']);
+return redirect("/portafolio")->with('data', $data)->with('message', ['success', 'Message sent succesfully']);
 }
 }
