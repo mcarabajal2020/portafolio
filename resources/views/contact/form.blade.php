@@ -38,8 +38,8 @@
                     </div>
                     <div class="form-group row mt-5">
                         <label class="col-sm-2 col-form-label">Mensaje</label>
-                        <div class="col-sm-10 border border-dark rounded">
-                            <textarea class="form-control" name="message" placeholder="Ingrese su Consulta"></textarea>
+                        <div class="col-sm-10 ">
+                            <textarea class="form-control border border-dark" name="message" placeholder="Ingrese su Consulta"></textarea>
                         </div>
                         <button class="btn btn-success col-md-13 mt-3">Enviar</button>
                     </div>
