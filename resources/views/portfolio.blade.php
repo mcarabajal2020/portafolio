@@ -71,19 +71,19 @@
                             <h2 class="text-dark">PORTFOLIO</h2>
                             <hr>
                         </div>
-                        <div class="card m-auto text-center" style="width: 18rem;">
+                        <div class="card m-auto text-center mt-3" style="width: 18rem;">
                             <a href="http://www.intercoopasteur.com.ar"> <img src="{{asset('https://intercoopasteur.com.ar/wp-content/uploads/2020/06/logo-de-la-Cooperativa-1024x960.png')}}" class="mt-3" alt="Cooperativa Electrica de Pasteur" width="100"></a> 
                             <div class="card-body">
                                 <p>Coop. Electrica de Pasteur</p>
                             </div>
                         </div>
-                        <div class="card m-auto text-center" style="width: 18rem;">
+                        <div class="card m-auto text-center mt-3" style="width: 18rem;">
                             <a href="http://www.coophenderson.com.ar"> <img src="{{asset('https://coophenderson.com.ar/wp-content/uploads/2021/11/Logo-Cooperativa-150x150.png')}}" class="mt-3" alt="Cooperativa de Agua Potable y otros Servicios Publicos de Henderson LTDA" width="100"></a> 
                             <div class="card-body">
                                 <p> De Agua Henderson</p>
                             </div>
                         </div>
-                        <div class="card m-auto text-center" style="width: 18rem;">
+                        <div class="card m-auto text-center mt-3" style="width: 18rem;">
                             <a href="https://consultoragropecuario.com.ar"> <img src="{{asset('https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png')}}" class="mt-3" alt="El Inca - Consagro" width="100"></a> 
                             <div class="card-body">
                                 <p> Inca - Consagro </p>
