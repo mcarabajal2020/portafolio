@@ -20,7 +20,15 @@
             </p>
             <p class="text-left post-txt"><i>Categoría: {{$post->category->name}}</i></p>
         </div>
-
+        <p>Compartir!</p>
+        {!!Share::currentPage()->facebook('title')
+            ->twitter('title')
+            ->linkedin('title')
+            ->telegram('title')
+            ->whatsapp('title');!!}
+            
+        
+        
         <!-- Entradas recientes -->
         <div class="col-md-3 offset-md-1">
             <p class="text-dark">Últimas entradas</p>
@@ -128,3 +136,9 @@
     </div>
 </section> --}}
 @endsection
+
+@section('js')
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="{{ asset('js/share.js') }}"></script>
+@stop 
