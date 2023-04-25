@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -82,7 +83,8 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
+    Carbon::setLocale('es'),
 
     /*
     |--------------------------------------------------------------------------
