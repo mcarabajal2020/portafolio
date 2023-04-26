@@ -20,13 +20,17 @@
             </p>
             <p class="text-left post-txt"><i>Categoría: {{$post->category->name}}</i></p>
         </div>
-        <p>Compartir!</p>
-        {!!Share::currentPage()->facebook('title')
+        <div>
+            <p class="text-center font-weight-bold">Compartir!</p>
+            {!!Share::currentPage()->facebook('title')
             ->twitter('title')
             ->linkedin('title')
             ->telegram('title')
             ->whatsapp('title');!!}
             
+        </div>
+ 
+        
         
         
         <!-- Entradas recientes -->

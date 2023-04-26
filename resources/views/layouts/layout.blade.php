@@ -47,7 +47,7 @@
                 border: 1px solid #ccc;
                 margin: 1px;
                 font-size: 30px;
-                color: #222;
+                
                 background-color: #ccc;
                 transition: all .4s ease;
             }
