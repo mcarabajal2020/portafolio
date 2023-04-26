@@ -34,6 +34,28 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+          <style>
+            div#social-links {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+            div#social-links ul li {
+                display: inline-block;
+            }          
+            div#social-links ul li a {
+                padding: 20px;
+                border: 1px solid #ccc;
+                margin: 1px;
+                font-size: 30px;
+                color: #222;
+                background-color: #ccc;
+                transition: all .4s ease;
+            }
+            div#social-links ul li:hover {
+               transform: scale(1.3);
+            }
+
+        </style>
    
     @vite(['resources/sass/app.scss', 'resources/sass/style.sass', 'resources/js/app.js'])
 </head>
