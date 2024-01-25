@@ -12,6 +12,7 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 <script src="{{ asset('js/share.js') }}"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -47,7 +48,6 @@
                 border: 1px solid #ccc;
                 margin: 1px;
                 font-size: 30px;
-                
                 background-color: #ccc;
                 transition: all .4s ease;
             }
@@ -61,7 +61,7 @@
 </head>
 <body  class="antialiased">
      <!-- Logo -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
              <div class="row py-4">
                  <div class="container d-flex justify-content-between">

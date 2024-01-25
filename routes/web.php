@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Visit;
 use App\Mail\TestMail;
 use Illuminate\Mail\Mailable;
 use App\Http\Controllers\mails;
@@ -23,6 +24,9 @@ use App\Http\Controllers\ContactFormController;
 
 
 Auth::routes();
+Route::get('/', function () {
+    return view('portfolio');
+});
 Route::get('/portfolio', function () {
     return view('portfolio');
 });
@@ -57,6 +61,5 @@ Route::post('send-form', [ContactFormController::class, 'send'])->name('contact.
 
 Route::post('/mail', [\App\Http\Controllers\mails::class, 'create'] )->name('mail');
 
-Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'posts'])->name('home');
+Route::get('/posts/{id}', [NoticiasController::class, 'show'])->name('posts.show')->middleware('recordVisit:posts.show');

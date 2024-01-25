@@ -70,4 +70,5 @@ class PostsController extends Controller
         $post->delete();
           return redirect()->back();  
         }
+        
 }

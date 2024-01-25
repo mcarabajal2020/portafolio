@@ -7,13 +7,16 @@
 @stop
 
 @section('content_header')
-     <h1>Admin - CarabajalDev</h1>
+     <h1>Dashboard - CarabajalDev</h1>
  @stop
 
 @section('content')
-    <p>Welcome to this beatiful admin panel</p>    
+    <p>CarabajalDev Dashboard</p>   
+
+    
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+
+
 @stop

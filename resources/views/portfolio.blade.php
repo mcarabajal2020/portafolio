@@ -25,7 +25,7 @@
             @vite(['resources/sass/app.scss', 'resources/sass/style.sass', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
            <div class="container">
                 <div class="row py-4">
                     <div class="container d-flex justify-content-between">
