@@ -3,52 +3,34 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class ContactForm extends Mailable
-
 {
-
     use Queueable, SerializesModels;
 
-    /**
+    public function __construct(
+        public array $data,
+    ) {}
 
-     * Create a new message instance.
-
-     *
-
-     * @return void
-
-     */
-
-    public function __construct($data)
-
+    public function envelope(): Envelope
     {
-
-        $this->data = $data;
-
+        return new Envelope(
+            from: new \Illuminate\Support\From('info@carabajaldev.com.ar', 'CarabajalDev'),
+            subject: 'Nuevo mensaje de contacto desde carabajaldev.com.ar',
+        );
     }
 
-    /**
-
-     * Build the message.
-
-     *
-
-     * @return $this
-
-     */
-
-    public function build()
-
+    public function content(): Content
     {
-
-        return $this->from('info@carabajaldev.com.ar', 'Sistema de Envio de Notificaciones Automaticas')->subject('Un usuario esta intentado contactarte')->view('email.contact-form', ['data' => $this->data]);
-
+        return new Content(
+            view: 'emails.contact-form',
+            with: [
+                'data' => $this->data,
+            ],
+        );
     }
-
 }

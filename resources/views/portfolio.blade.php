@@ -1,138 +1,63 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Carabajal dev</title>
+@extends('layouts.app')
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-align-items-centerdjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.border-gray-200{--tw-border-opacity: 1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.text-center{text-align:center}.text-gray-200{--tw-text-opacity: 1;color:rgb(229 231 235 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity: 1;color:rgb(17 24 39 / var(--tw-text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity))}.dark\:bg-gray-900{--tw-bg-opacity: 1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:border-gray-700{--tw-border-opacity: 1;border-color:rgb(55 65 81 / var(--tw-border-opacity))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}}
-        </style>
+@section('title', 'Portfolio — CarabajalDev')
+@section('description', 'Proyectos y clientes de CarabajalDev.')
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-            @vite(['resources/sass/app.scss', 'resources/sass/style.sass', 'resources/js/app.js'])
-    </head>
-    <body class="antialiased">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-           <div class="container">
-                <div class="row py-4">
-                    <div class="container d-flex justify-content-between">
-                        <a class="navbar-brand mr-auto" href="/portfolio">CarabajalDev</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarText">
-                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                  <li class="nav-item">
-                                      <a class="nav-link active" aria-current="page" href="/portfolio">Portfolio</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="/portfolio#acercade">Acerca de</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="{{route('posts')}}">Blog</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a class="nav-link" href="{{route('contact.form')}}">Contacto</a>
-                                  </li>
-                              </ul>
-                        </div>
-                      </div>
+@section('content')
+<section class="border-b border-gray-100 py-16 dark:border-gray-900 sm:py-20">
+    <div class="container-page">
+        <div class="max-w-2xl">
+            <h1 class="section-title">Portfolio</h1>
+            <p class="section-subtitle">Proyectos que ayudaron a cooperativas, pymes y organizaciones a potenciar su presencia digital.</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container-page">
+        <div class="grid gap-6 md:grid-cols-3">
+            @foreach($clients as $client)
+            <article class="card-hover flex flex-col overflow-hidden">
+                <div class="flex h-40 items-center justify-center bg-gray-50 p-6 dark:bg-gray-800/60">
+                    <img src="{{ $client['logo'] }}" alt="{{ $client['name'] }}" class="max-h-24 w-auto object-contain" loading="lazy">
                 </div>
-           </div>
-        </nav>
-          <header class="container-fluid" >
-            <div class="row" style="height: 768px; background-color: #5cbd9d">
-                <div class="col-12 align-self-center text-center ">
-                    <img src="{{asset('images/avatar.png')}}" class="img-fluid" width="200px">
-                    <h1>Bienvenidos</h1>
-                    <hr>
-                    <p>Desarrollador web</p>
-                  
+                <div class="flex flex-1 flex-col p-6">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $client['name'] }}</h2>
+                    <p class="mt-2 flex-1 text-sm text-gray-500 dark:text-gray-400">{{ $client['description'] }}</p>
+                    <a href="{{ $client['url'] }}" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-500 dark:text-primary-400">
+                        Visitar sitio
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m13.5 6 6 6-6 6m-6-6 6 6-6 6" /></svg>
+                    </a>
                 </div>
-               
+            </article>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<section id="acercade" class="border-t border-gray-100 bg-gray-50 py-16 dark:border-gray-900 dark:bg-gray-900/40 sm:py-20">
+    <div class="container-page grid items-center gap-10 lg:grid-cols-2">
+        <div class="relative">
+            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-primary-400/20 to-sky-400/20 blur-2xl"></div>
+            <img src="{{ $avatar }}" alt="CarabajalDev" class="relative mx-auto w-full max-w-sm rounded-3xl object-cover shadow-xl">
+        </div>
+        <div>
+            <h2 class="section-title">Acerca de mí</h2>
+            <p class="mt-4 text-gray-500 dark:text-gray-400">
+                Soy desarrollador web especializado en Laravel y Filament. Me gusta construir productos claros: interfaces que se entienden, código que se mantiene y resultados que se pueden medir.
+            </p>
+            <p class="mt-4 text-gray-500 dark:text-gray-400">
+                Trabajo con cooperativas, pymes y equipos que necesitan digitalizar procesos sin perder el toque humano.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+                <span class="rounded-full bg-white px-3 py-1 text-sm font-medium text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">Laravel</span>
+                <span class="rounded-full bg-white px-3 py-1 text-sm font-medium text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">Filament</span>
+                <span class="rounded-full bg-white px-3 py-1 text-sm font-medium text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">Livewire</span>
+                <span class="rounded-full bg-white px-3 py-1 text-sm font-medium text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">Tailwind</span>
+                <span class="rounded-full bg-white px-3 py-1 text-sm font-medium text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">MySQL</span>
             </div>
-          </header>
-            <section class="container-fluid" id="portfolio">
-                    <div class="row justify-content-center mb-5" >
-                        <div class="col-12 text-center mt-5">
-                            <h2 class="text-dark">PORTFOLIO</h2>
-                            <hr>
-                        </div>
-                        <div class="card m-auto text-center mt-3" style="width: 18rem;">
-                            <a href="http://www.intercoopasteur.com.ar"> <img src="{{asset('https://intercoopasteur.com.ar/wp-content/uploads/2020/06/logo-de-la-Cooperativa-1024x960.png')}}" class="mt-3" alt="Cooperativa Electrica de Pasteur" width="100"></a> 
-                            <div class="card-body">
-                                <p>Coop. Electrica de Pasteur</p>
-                            </div>
-                        </div>
-                        <div class="card m-auto text-center mt-3" style="width: 18rem;">
-                            <a href="http://www.coophenderson.com.ar"> <img src="{{asset('https://coophenderson.com.ar/wp-content/uploads/2021/11/Logo-Cooperativa-150x150.png')}}" class="mt-3" alt="Cooperativa de Agua Potable y otros Servicios Publicos de Henderson LTDA" width="100"></a> 
-                            <div class="card-body">
-                                <p> De Agua Henderson</p>
-                            </div>
-                        </div>
-                        <div class="card m-auto text-center mt-3" style="width: 18rem;">
-                            <a href="https://consultoragropecuario.com.ar"> <img src="{{asset('https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png')}}" class="mt-3" alt="El Inca - Consagro" width="100"></a> 
-                            <div class="card-body">
-                                <p> Inca - Consagro </p>
-                            </div>
-                        </div>
-                       
-                    </div>
-            </section>
-
-            <section class="container-fluid" id="acercade" >
-                <div class="row justify-content-center py-5" style="background-color: #5cbd9d">
-                    <div class="col-12 text-center mt-5 mb-4">
-                        <h2 style="text-color: white; ">Acerca de mi</h2>
-                        <hr >
-                    </div>
-                    <div class="col-4">
-                        <p>Me apasiona la tecnología, pero no me conformo con solo usarla, necesito entenderla y ver otras maneras de aplicarla o mejorarla, creo que por eso desarmaba los juguetes de niño, para entender cómo funcionaban.  Desde muy joven supe que de una o otra manera mi trabajo tenía que estar ligado a la tecnología, en mis inicios reparando computadoras, desarrollando infraestructura, y ahora programando aplicaciones web.</p>
-                    </div>
-                    <div class="col-4">
-                        <p>Soy emprendedor y encaro los proyectos con mucha pasión, a veces sin medir el tiempo que invierto, como dicen por ahí, de los que se tiran todo al hombro, pero también soy precavido y analizó todas las variables posibles antes de tomar una decisión. Estas cualidades son las que me llevaron a donde estoy.</p>    
-                   </div>  
-                   
-                </div>
-               
-            </section>
-            
-        <footer class="container-fluid">
-            <div class="row justify-content-center py-3">
-                <div class="col-4 text-center">
-                    <h3>UBICACION</h3>
-                    <p>Henderson, Argentina</p>
-                </div> 
-                <div class="col-4 text-center">
-                    <h3>SIGUEME</h3>
-                    
-                        <a href="https://www.facebook.com/alejandromaximiliano.carabajal"><i class="fa-brands fa-facebook zoom"></i></a>
-                        <a href="https://twitter.com/Maxi_carabajal"><i class="fa-brands fa-twitter zoom"></i></a>
-                        <a href="https://www.instagram.com/alejandromaximilianocarabajal/"><i class="fa-brands fa-instagram zoom"></i></a>
-                  
-                </div> 
-                <div class="col-4 text-center">
-                    <h3>ACERCA DE</h3>
-                    <p>La vida como Freelancer</p>
-                </div>
-                <div class="col-12 py-3 text-center">
-                    <p>Diseño CarabajalDev {{now()->year}}</p>
-                </div>
-            </div>
-        </footer>
-        
-    </body>
-</html>
+            <a href="{{ route('contact.form') }}" class="btn-primary mt-8">Trabajemos juntos</a>
+        </div>
+    </div>
+</section>
+@endsection

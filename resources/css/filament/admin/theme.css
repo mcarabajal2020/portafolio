@@ -1,0 +1,109 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@layer base {
+    :root {
+        --fi-font-family: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        --fi-rounded-lg: 0.625rem;
+        --fi-rounded-xl: 0.875rem;
+        --fi-rounded-2xl: 1.125rem;
+    }
+
+    :root[class~='dark'] {
+        color-scheme: dark;
+    }
+
+    body {
+        font-family: var(--fi-font-family);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Sidebar — clean SaaS look */
+.fi-sidebar {
+    @apply border-r border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950;
+}
+
+.fi-sidebar-header {
+    @apply border-b border-gray-100 px-4 py-4 dark:border-gray-800/80;
+}
+
+.fi-sidebar-item-button {
+    @apply rounded-lg transition;
+}
+
+.fi-sidebar-item-button:hover {
+    @apply bg-gray-50 dark:bg-gray-900/70;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-button {
+    @apply bg-primary-50 font-medium text-primary-700 dark:bg-primary-950/60 dark:text-primary-300;
+}
+
+/* Topbar */
+.fi-topbar {
+    @apply border-b border-gray-200/80 bg-white/85 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/85;
+}
+
+/* Main content area */
+.fi-main-ctn {
+    @apply bg-gray-50/70 dark:bg-gray-950;
+}
+
+/* Section cards / widgets */
+.fi-section,
+.fi-wi-card {
+    @apply rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900;
+}
+
+/* Tables */
+.fi-ta-table {
+    @apply overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900;
+}
+
+.fi-ta-header-cell {
+    @apply bg-gray-50/90 text-[0.7rem] font-semibold uppercase tracking-wider text-gray-500 dark:bg-gray-900/80 dark:text-gray-400;
+}
+
+.fi-ta-row {
+    @apply transition-colors;
+}
+
+.fi-ta-row:hover {
+    @apply bg-gray-50/80 dark:bg-gray-900/50;
+}
+
+/* Buttons */
+.fi-btn {
+    @apply rounded-lg font-semibold tracking-tight transition;
+}
+
+.fi-btn-primary {
+    @apply shadow-sm;
+}
+
+/* Forms */
+.fi-input,
+.fi-select-input,
+.fi-textarea {
+    @apply rounded-lg shadow-sm transition;
+}
+
+.fi-input:focus,
+.fi-select-input:focus,
+.fi-textarea:focus {
+    @apply border-primary-400 ring-2 ring-primary-500/15;
+}
+
+/* Badges */
+.fi-badge {
+    @apply rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+
+/* Auth / login polish */
+.fi-login-page {
+    @apply bg-gradient-to-b from-gray-50 via-white to-white dark:from-gray-950 dark:via-gray-950 dark:to-gray-950;
+}

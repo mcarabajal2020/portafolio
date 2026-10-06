@@ -2,84 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Models\Visit;
+use Illuminate\View\View;
 
 class PortfolioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): View
     {
-       return view('/portfolio');
-    }
+        Visit::record('portfolio');
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        $clients = [
+            [
+                'name' => 'Cooperativa Eléctrica de Pasteur',
+                'url' => 'https://intercoopasteur.com.ar',
+                'logo' => 'https://intercoopasteur.com.ar/wp-content/uploads/2020/06/logo-de-la-Cooperativa-1024x960.png',
+                'description' => 'Sitio institucional y gestión digital para cooperativa eléctrica.',
+            ],
+            [
+                'name' => 'Cooperativa de Agua Potable de Henderson',
+                'url' => 'https://coophenderson.com.ar',
+                'logo' => 'https://coophenderson.com.ar/wp-content/uploads/2021/11/Logo-Cooperativa-150x150.png',
+                'description' => 'Plataforma web para servicios públicos de agua potable.',
+            ],
+            [
+                'name' => 'Inca - Consultoría Agropecuaria',
+                'url' => 'https://consultoragropecuario.com.ar',
+                'logo' => 'https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png',
+                'description' => 'Consultoría agropecuaria con presencia digital moderna.',
+            ],
+        ];
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('portfolio', [
+            'clients' => $clients,
+            'avatar' => asset('images/avatar.png'),
+        ]);
     }
 }
