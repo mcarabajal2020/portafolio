@@ -4,6 +4,7 @@ namespace App\Filament\Widgets;
 
 use App\Filament\Resources\Posts\PostResource;
 use App\Models\Post;
+use Filament\Actions\EditAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget as BaseWidget;
@@ -44,7 +45,7 @@ class LatestPosts extends BaseWidget
                     ->dateTime('d/m/Y H:i'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
             ->paginated(false);
     }
