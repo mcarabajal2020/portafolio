@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
+use Throwable;
 
 class Visit extends Model
 {
@@ -13,7 +15,15 @@ class Visit extends Model
 
     public static function record(string $pageName): void
     {
-        $visit = static::firstOrCreate(['page_name' => $pageName]);
-        $visit->increment('count');
+        try {
+            if (! Schema::hasTable('visits')) {
+                return;
+            }
+
+            $visit = static::firstOrCreate(['page_name' => $pageName]);
+            $visit->increment('count');
+        } catch (Throwable) {
+            // El tracking de visitas nunca debe romper el sitio.
+        }
     }
 }

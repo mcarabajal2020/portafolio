@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 
 class BlogController extends Controller
@@ -13,6 +14,17 @@ class BlogController extends Controller
     public function index(Request $request): View
     {
         Visit::record('blog');
+
+        $hasPosts = Schema::hasTable('posts');
+        $hasCategories = Schema::hasTable('categories');
+
+        if (! $hasPosts) {
+            return view('blog.index', [
+                'posts' => collect(),
+                'categories' => collect(),
+                'activeCategory' => (string) $request->string('category'),
+            ]);
+        }
 
         $query = Post::where('is_published', true)->with('category')->latest();
 
@@ -24,8 +36,10 @@ class BlogController extends Controller
 
         return view('blog.index', [
             'posts' => $query->paginate(9)->withQueryString(),
-            'categories' => Category::withCount('posts')->get(),
-            'activeCategory' => $request->string('category'),
+            'categories' => $hasCategories
+                ? Category::withCount('posts')->get()
+                : collect(),
+            'activeCategory' => (string) $request->string('category'),
         ]);
     }
 
@@ -37,7 +51,11 @@ class BlogController extends Controller
             abort(404);
         }
 
-        $post->increment('visits');
+        try {
+            $post->increment('visits');
+        } catch (\Throwable) {
+            // tracking best-effort
+        }
 
         return view('blog.show', [
             'post' => $post,

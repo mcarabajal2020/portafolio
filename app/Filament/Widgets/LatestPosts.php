@@ -7,6 +7,7 @@ use App\Models\Post;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget as BaseWidget;
+use Illuminate\Support\Facades\Schema;
 
 class LatestPosts extends BaseWidget
 {
@@ -16,8 +17,12 @@ class LatestPosts extends BaseWidget
 
     public function table(Table $table): Table
     {
+        $query = Schema::hasTable('posts')
+            ? Post::query()->latest()->limit(5)
+            : Post::query()->whereRaw('1 = 0');
+
         return $table
-            ->query(Post::query()->latest()->limit(5))
+            ->query($query)
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->label('Título')
