@@ -19,7 +19,10 @@ class ContactForm extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new \Illuminate\Support\From('info@carabajaldev.com.ar', 'CarabajalDev'),
+            from: new \Illuminate\Support\From(
+                env('MAIL_FROM_ADDRESS', 'info@carabajaldev.com.ar'),
+                env('MAIL_FROM_NAME', 'CarabajalDev'),
+            ),
             subject: 'Nuevo mensaje de contacto desde carabajaldev.com.ar',
         );
     }

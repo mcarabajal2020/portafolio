@@ -28,7 +28,7 @@ class ContactController extends Controller
             'message' => ['required', 'string', 'max:5000'],
         ]);
 
-        Mail::to('alejandrom.carabajal@gmail.com')->send(new ContactForm($data));
+        Mail::to(env('CONTACT_EMAIL', 'alejandrom.carabajal@gmail.com'))->send(new ContactForm($data));
 
         return redirect()
             ->route('contact.form')
