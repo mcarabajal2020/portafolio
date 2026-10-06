@@ -97,8 +97,8 @@
         <div class="mt-10 grid gap-6 md:grid-cols-3">
             @foreach($featuredPosts as $post)
             <article class="card-hover overflow-hidden">
-                @if($post->featured)
-                <img src="{{ asset($post->featured) }}" alt="{{ $post->title }}" class="h-40 w-full object-cover">
+                @if($post->featured_url)
+                <img src="{{ $post->featured_url }}" alt="{{ $post->title }}" class="h-40 w-full object-cover">
                 @endif
                 <div class="p-5">
                     @if($post->category)

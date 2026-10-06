@@ -33,8 +33,8 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach($posts as $post)
             <article class="card-hover flex flex-col overflow-hidden">
-                @if($post->featured)
-                <img src="{{ asset($post->featured) }}" alt="{{ $post->title }}" class="h-44 w-full object-cover" loading="lazy">
+@if($post->featured_url)
+                    <img src="{{ $post->featured_url }}" alt="{{ $post->title }}" class="h-44 w-full object-cover" loading="lazy">
                 @endif
                 <div class="flex flex-1 flex-col p-5">
                     @if($post->category)

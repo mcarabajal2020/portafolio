@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Posts\Schemas;
 
 use App\Models\Category;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -39,10 +40,14 @@ class PostForm
                             ->label('Autor')
                             ->default('CarabajalDev')
                             ->maxLength(255),
-                        TextInput::make('featured')
+                        FileUpload::make('featured')
                             ->label('Imagen destacada')
-                            ->helperText('Ruta relativa, ej: images/featureds/notion.png')
-                            ->maxLength(255),
+                            ->disk('public')
+                            ->directory('images/featureds')
+                            ->image()
+                            ->maxSize(2048)
+                            ->imageEditor()
+                            ->helperText('JPG, PNG o WebP (máx. 2 MB)'),
                         Toggle::make('is_published')
                             ->label('Publicado')
                             ->default(true),

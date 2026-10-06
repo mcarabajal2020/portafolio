@@ -25,8 +25,8 @@
             </div>
         </header>
 
-        @if($post->featured)
-        <img src="{{ asset($post->featured) }}" alt="{{ $post->title }}" class="mt-8 w-full rounded-2xl object-cover shadow-lg" loading="eager">
+        @if($post->featured_url)
+        <img src="{{ $post->featured_url }}" alt="{{ $post->title }}" class="mt-8 w-full rounded-2xl object-cover shadow-lg" loading="eager">
         @endif
 
         <div class="prose prose-gray mt-8 max-w-none dark:prose-invert">

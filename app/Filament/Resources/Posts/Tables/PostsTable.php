@@ -23,6 +23,7 @@ class PostsTable
                 ImageColumn::make('featured')
                     ->label('Imagen')
                     ->circular()
+                    ->state(fn ($record) => $record->featured_url)
                     ->defaultImageUrl(asset('images/logo.png')),
                 TextColumn::make('title')
                     ->label('Título')
