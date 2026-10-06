@@ -299,7 +299,7 @@ return new class extends Migration
             'wordpress-en-2026-sigue-siendo-una-buena-opcion-para-crear-una-pagina-web',
             '10-errores-que-pueden-hacer-que-tu-pagina-web-sea-lenta',
             'como-proteger-una-pagina-web-de-wordpress-contra-ataques-y-malware',
-            'pagina-web-o-redes-sociales-por-que-tu-necesita-tener-su-propio-sitio',
+            'pagina-web-o-redes-sociales-por-que-tu-negocio-necesita-tener-su-propio-sitio',
             'inteligencia-artificial-para-desarrolladores-web-herramientas-que-realmente-vale-la-pena-utilizar',
             'que-tener-en-cuenta-antes-de-contratar-un-desarrollador-web',
             'diseno-responsive-por-que-tu-pagina-debe-funcionar-perfectamente-en-celulares',
