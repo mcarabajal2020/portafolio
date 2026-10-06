@@ -24,7 +24,7 @@ class PostsTable
                     ->label('Imagen')
                     ->circular()
                     ->state(fn ($record) => $record->featured_url)
-                    ->defaultImageUrl(asset('images/logo.png')),
+                    ->defaultImageUrl(asset('images/logo-mark.png')),
                 TextColumn::make('title')
                     ->label('Título')
                     ->searchable()

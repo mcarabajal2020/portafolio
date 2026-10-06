@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'CarabajalDev')</title>
     <meta name="description" content="@yield('description', 'CarabajalDev — Desarrollo web, soluciones digitales y blog técnico.')">
-    <link rel="icon" href="{{ asset('images/logo.png') }}">
+    <link rel="icon" href="{{ asset('images/logo-mark.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
+    <meta name="theme-color" content="#0ea5e9">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
@@ -15,8 +17,9 @@
 
     <header class="sticky top-0 z-40 border-b border-gray-200/80 bg-white/90 backdrop-blur dark:border-gray-800 dark:bg-gray-950/90">
         <div class="container-page flex h-16 items-center justify-between">
-            <a href="{{ route('home') }}" class="flex items-center gap-3">
-                <img src="{{ asset('images/logo.png') }}" alt="CarabajalDev" class="h-8 w-auto">
+            <a href="{{ route('home') }}" class="flex items-center gap-2">
+                <img src="{{ asset('images/logo-mark.png') }}" alt="CarabajalDev" class="h-10 w-10">
+                <span class="hidden text-sm font-bold tracking-tight text-gray-900 sm:inline dark:text-white">CarabajalDev</span>
             </a>
 
             <nav class="hidden items-center gap-1 md:flex">
@@ -62,7 +65,7 @@
         <div class="container-page py-12">
             <div class="grid gap-10 md:grid-cols-3">
                 <div>
-                    <img src="{{ asset('images/logo.png') }}" alt="CarabajalDev" class="h-8 w-auto">
+                    <img src="{{ asset('images/logo.png') }}" alt="CarabajalDev" class="h-16 w-auto">
                     <p class="mt-4 max-w-sm text-sm text-gray-500 dark:text-gray-400">
                         Sitio institucional, portfolio y blog de desarrollo web. Soluciones digitales a medida.
                     </p>
