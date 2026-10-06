@@ -30,6 +30,18 @@ class PortfolioController extends Controller
                 'logo' => 'https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png',
                 'description' => 'Consultoría agropecuaria con presencia digital moderna.',
             ],
+            [
+                'name' => 'Cooperativa Agropecuaria Darregueira',
+                'url' => 'https://sitio.coopdarregueira.com.ar',
+                'logo' => asset('images/clients/coop-darregueira-wordmark.png'),
+                'description' => 'Sitio institucional con secciones, clasificados rurales y servicios para socios.',
+            ],
+            [
+                'name' => 'POS3D',
+                'url' => 'https://pos3d.carabajaldev.com.ar',
+                'logo' => asset('images/clients/pos3d.svg'),
+                'description' => 'Sistema de punto de venta (POS) desarrollado con Laravel y Filament.',
+            ],
         ];
 
         return view('portfolio', [
