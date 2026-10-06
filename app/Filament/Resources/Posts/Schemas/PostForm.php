@@ -44,9 +44,10 @@ class PostForm
                             ->label('Imagen destacada')
                             ->disk('public')
                             ->directory('images/featureds')
+                            ->visibility('public')
                             ->image()
                             ->maxSize(2048)
-                            ->imageEditor()
+                            ->maxParallelUploads(1)
                             ->helperText('JPG, PNG o WebP (máx. 2 MB)'),
                         Toggle::make('is_published')
                             ->label('Publicado')
