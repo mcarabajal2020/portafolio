@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -19,9 +20,9 @@ class ContactForm extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new \Illuminate\Support\From(
-                env('MAIL_FROM_ADDRESS', 'info@carabajaldev.com.ar'),
-                env('MAIL_FROM_NAME', 'CarabajalDev'),
+            from: new Address(
+                config('mail.from.address', 'info@carabajaldev.com.ar'),
+                config('mail.from.name', 'CarabajalDev'),
             ),
             subject: 'Nuevo mensaje de contacto desde carabajaldev.com.ar',
         );
