@@ -1,5 +1,5 @@
 /node_modules
-/public/build
+# /public/build SÍ va en git: el servidor no tiene npm (el build se hace en local con `npm run build`)
 /public/hot
 /public/storage
 /public/hot
