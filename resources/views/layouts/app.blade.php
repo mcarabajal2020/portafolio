@@ -8,6 +8,16 @@
     <link rel="icon" href="{{ asset('images/logo-mark.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <meta name="theme-color" content="#0ea5e9">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
@@ -114,16 +124,23 @@
     <script>
         (function () {
             var root = document.documentElement;
-            var stored = localStorage.getItem('theme');
-            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                root.classList.add('dark');
+            var storage = null;
+            try {
+                storage = window.localStorage;
+                storage.getItem('theme');
+            } catch (e) {
+                storage = null;
             }
 
             var toggle = document.getElementById('theme-toggle');
             if (toggle) {
                 toggle.addEventListener('click', function () {
-                    root.classList.toggle('dark');
-                    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+                    var dark = root.classList.toggle('dark');
+                    if (storage) {
+                        try {
+                            storage.setItem('theme', dark ? 'dark' : 'light');
+                        } catch (e) {}
+                    }
                 });
             }
 
