@@ -145,9 +145,12 @@
     <div class="container-page text-center">
         <h2 class="text-3xl font-bold text-white sm:text-4xl">¿Tenés un proyecto en mente?</h2>
         <p class="mx-auto mt-4 max-w-2xl text-primary-50">Contame qué necesitás y armamos una propuesta a medida.</p>
-        <div class="mt-8 flex justify-center gap-3">
-            <a href="{{ route('contact.form') }}" class="btn bg-white text-primary-700 hover:bg-primary-50">Contactar ahora</a>
-            <a href="{{ route('portfolio') }}" class="btn border border-white/40 text-white hover:bg-white/10">Ver trabajos</a>
+        <div class="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <a href="{{ route('contact.form') }}" class="btn-white">
+                Contactar ahora
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+            </a>
+            <a href="{{ route('portfolio') }}" class="btn-outline-white">Ver trabajos</a>
         </div>
     </div>
 </section>

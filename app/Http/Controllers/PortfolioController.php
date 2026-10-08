@@ -25,7 +25,7 @@ class PortfolioController extends Controller
                 'description' => 'Plataforma web para servicios públicos de agua potable.',
             ],
             [
-                'name' => 'Inca - Consultoría Agropecuaria',
+                'name' => 'Inca - Consultor Agropecuario',
                 'url' => 'https://consultoragropecuario.com.ar',
                 'logo' => 'https://consultoragropecuario.com.ar/wp-content/uploads/2022/05/Logo-elIn-png-768x559.png',
                 'description' => 'Consultoría agropecuaria con presencia digital moderna.',
