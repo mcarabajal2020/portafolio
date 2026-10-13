@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <meta name="theme-color" content="#0ea5e9">
     <script>
+        document.documentElement.classList.add('js');
         (function () {
             try {
                 var stored = localStorage.getItem('theme');
@@ -142,6 +143,23 @@
                         } catch (e) {}
                     }
                 });
+            }
+
+            var reveals = document.querySelectorAll('.reveal');
+            if (reveals.length) {
+                if ('IntersectionObserver' in window) {
+                    var observer = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+                    reveals.forEach(function (el) { observer.observe(el); });
+                } else {
+                    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+                }
             }
 
             var btn = document.getElementById('mobile-menu-btn');
